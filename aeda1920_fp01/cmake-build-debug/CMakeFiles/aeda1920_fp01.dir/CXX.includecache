@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp01/Tests/parque.cpp
+parque.h
+C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp01/Tests/parque.h
+vector
+-
+iostream
+-
+
+C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp01/Tests/parque.h
+iostream
+-
+string
+-
+vector
+-
+

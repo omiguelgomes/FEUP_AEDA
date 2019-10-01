@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp02/Tests/frota.cpp
+frota.h
+C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp02/Tests/frota.h
+string
+-
+
+C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp02/Tests/frota.h
+vector
+-
+veiculo.h
+C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp02/Tests/veiculo.h
+
+C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp02/Tests/veiculo.h
+string
+-
+

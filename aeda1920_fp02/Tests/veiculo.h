@@ -15,8 +15,9 @@ public:
    int getMes() const;
    string getMarca() const;
    virtual int info() const;
+   virtual int info(ostream &o) const;
    bool operator < (const Veiculo & v) const;
-   virtual float calcImposto() const = 0;
+   virtual float calcImposto() const;
 };
 
 class Motorizado: public Veiculo {
@@ -25,6 +26,7 @@ public:
    Motorizado(string mc, int m, int a,string c,int cil);
    string getCombustivel() const;
    virtual int info() const;
+   int info(ostream &o) const;
    float calcImposto() const;
 };
 
@@ -32,6 +34,7 @@ class Automovel: public Motorizado {
 public:
    Automovel(string mc, int m, int a,string c, int cil);
    int info() const;
+   int info(ostream &o) const;
 };
 
 
@@ -40,6 +43,7 @@ class Camiao: public Motorizado {
 public:
    Camiao(string mc, int m, int a,string c, int cil,int cm);
    int info() const;
+   int info(ostream &o) const;
 };
 
 
@@ -48,7 +52,7 @@ class Bicicleta: public Veiculo {
 public:
    Bicicleta(string mc, int m, int a,string t);
    int info() const;
-   float calcImposto() const;
+   int info(ostream &o) const;
 };
 
 

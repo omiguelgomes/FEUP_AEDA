@@ -31,7 +31,9 @@ int Frota::menorAno() const
 
 float Frota::totalImposto() const
 {
-    float total;
+    if(numVeiculos() == 0) return 0;
+
+    float total = 0;
     for(auto v : veiculos)
     {
         total+=v->calcImposto();

@@ -25,12 +25,22 @@ int Veiculo::getMes() const
     return mes;
 }
 
+int Veiculo::info(ostream &o) const
+{
+    o << "Marca: " << marca << endl;
+    o << "Data: " << mes << "/" << ano << endl;
+    return 3;
+}
+
 int Veiculo::info() const
 {
     cout << endl << "Marca: " << marca << endl << "Mes: " << mes << endl
     << "Ano: " << ano << endl;
     return 3;
 }
+
+float Veiculo::calcImposto() const
+    {  return 0;}
 
 bool Veiculo::operator < (const Veiculo & v) const
 {
@@ -47,6 +57,14 @@ string Motorizado::getCombustivel() const {
     return combustivel;
 }
 
+int Motorizado::info(ostream &o) const
+{
+    int infoV = Veiculo::info();
+    o << "Combustivel: " << combustivel << endl;
+    o << "Cilindrada: " << cilindrada << endl;
+    return infoV+2;
+}
+
 int Motorizado::info() const
 {
     int infoV = Veiculo::info();
@@ -54,6 +72,7 @@ int Motorizado::info() const
     << "Cilindrada: " << cilindrada << endl;
     return 2 + infoV;
 }
+
 
 float Motorizado::calcImposto() const
 {
@@ -120,6 +139,14 @@ float Motorizado::calcImposto() const
 
 Automovel::Automovel(string mc, int m, int a, string c, int cil) : Motorizado(mc, m, a, c, cil){}
 
+int Automovel::info(ostream &o) const
+{
+    o << "Automovel"<< endl;
+    int infoM=Motorizado::info();
+    o << endl;
+    return infoM;
+}
+
 int Automovel::info() const
 {
     int infoM = Motorizado::info();
@@ -129,6 +156,14 @@ int Automovel::info() const
 Camiao::Camiao(string mc, int m, int a, string c, int cil, int cm) : Motorizado(mc, m, a, c, cil)
 {
     carga_maxima = cm;
+}
+
+int Camiao::info(ostream &o) const
+{
+    o << "Camiao"<<endl;
+    int infoM = Motorizado::info();
+    o << "Carga maxima: " << carga_maxima<< endl<< endl;
+    return infoM+1;
 }
 
 int Camiao::info() const
@@ -143,14 +178,17 @@ Bicicleta::Bicicleta(string mc, int m, int a, string t) : Veiculo(mc, m, a)
     tipo = t;
 }
 
+int Bicicleta::info(ostream &o) const
+{
+    o << "Bicicleta" << endl;
+    int infoV=Veiculo::info();
+    o << "Tipo: " << tipo<< endl<< endl;
+    return infoV+1;
+}
+
 int Bicicleta::info() const
 {
     int infoV = Veiculo::info();
     cout << "Tipo: " << tipo << endl;
     return 1 + infoV;
-}
-
-float Bicicleta::calcImposto() const
-{
-    return 0;
 }

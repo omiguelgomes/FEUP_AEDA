@@ -19,7 +19,7 @@ TEST(test, a_Pesquisa){
 }
 
 TEST(test, b_UtilizacaoParque){
-    /*ParqueEstacionamento p1(10,20);
+    ParqueEstacionamento p1(10,20);
     p1.adicionaCliente("Joao Santos");
     p1.adicionaCliente("Pedro Morais");
     p1.adicionaCliente("Rui Silva");
@@ -48,7 +48,7 @@ TEST(test, b_UtilizacaoParque){
     catch (ClienteNaoExistente &e) {
         cout << "Apanhou excecao. Cliente nao existente: " << e.getNome() << endl;
         EXPECT_EQ("Tiago Silva", e.getNome());
-    }*/
+    }
 }
 
 TEST(test, c_OrdenaFrequencia){
@@ -71,7 +71,6 @@ TEST(test, c_OrdenaFrequencia){
     p1.sair("Rui Silva");
     p1.entrar("Rui Silva");
     p1.entrar("Pedro Morais");
-
     p1.ordenaClientesPorFrequencia();
     InfoCartao ic1=p1.getClientes()[2];
     EXPECT_EQ("Susana Costa", ic1.nome);

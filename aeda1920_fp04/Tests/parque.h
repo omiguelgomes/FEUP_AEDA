@@ -7,11 +7,20 @@
 
 using namespace std;
 
+class ClienteNaoExistente{
+public:
+    ClienteNaoExistente(const string &nome);
+    string getNome() const;
+    string nome;
+};
+
 class InfoCartao {
 public:
 	string nome;
 	bool presente;
 	int frequencia;
+	bool operator==(InfoCartao i) const;
+	bool operator<(InfoCartao i) const;
 };
 
 class ParqueEstacionamento {

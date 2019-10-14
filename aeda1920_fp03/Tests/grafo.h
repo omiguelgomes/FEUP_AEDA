@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 /**
@@ -8,6 +7,9 @@ using namespace std;
  */
 
 template <class N, class A> class Aresta;
+
+template <class N> class NoRepetido;
+
 
 template <class N, class A>
 class No {
@@ -45,34 +47,67 @@ class Grafo {
     void imprimir(std::ostream &os) const; 
 };
 
-template<class N, class A>
-Grafo<N, A>::Grafo() {}
-
-template<class N, class A>
-Grafo<N, A>::~Grafo()
-    {delete &nos;}
-
-template<class N, class A>
-int Grafo<N, A>::numNos(void) const //why void and not blank
-    {return nos.size();}
-
-    template<class N, class A>
-    int Grafo<N, A>::numArestas() const
-    {
-        int total = 0;
-
-        for(int i = 0; i < nos.size(); i++)
-        {
-            No<N,A> *noPtr = nos.at(i);
-            total += noPtr->arestas.size();
-        }
-
-        return total;
-    }
-
 template <class N, class A> 
 std::ostream & operator<<(std::ostream &out, const Grafo<N,A> &g);
 
+template<class N, class A>
+Grafo<N, A>::Grafo() {
+}
+
+template<class N, class A>
+Grafo<N, A>::~Grafo() {
+    delete &nos;
+}
+
+template<class N, class A>
+int Grafo<N, A>::numNos(void) const
+    {return nos.size();}
+
+template<class N, class A>
+int Grafo<N, A>::numArestas(void) const
+{
+    int total;
+    No<N,A> *noPtr;
+    for(int i = 0; i < nos.size(); i++)
+    {
+        noPtr = nos.at(i);
+        total += noPtr->arestas.size();
+    }
+    return total;
+}
+
+template<class N, class A>
+Grafo<N,A> &Grafo<N, A>::inserirNo(const N &dados) {
+
+    for(int i = 0; i < nos.size(); i++)
+    {
+        if(nos.at(i)->info == dados)
+        {
+            throw NoRepetido<N>(dados);
+        }
+    }
+    No<N, A> *no = new No<N, A>(dados);
+    nos.push_back(no);
+    return *this;
+}
+
+template<class N, class A>
+Grafo<N, A> &Grafo<N, A>::inserirAresta(const N &inicio, const N &fim, const A &val)
+{
+    cout << "Hi: " << endl;
+    cout << nos.at(0)->arestas.at(1).valor << endl;
+    for(int i = 0; i < nos.size(); i++)
+    {
+        for(int j = 0; j < nos.at(i)->arestas.size(); j++)
+        {
+            if((nos.at(i)->arestas.at(j).valor == val) || (nos.at(i)->arestas.at(j).destino == fim))
+            {
+                //throw aresta repetida exception
+            }
+        }
+    }
+    return *this;
+}
 
 // excecao NoRepetido
 template <class N>

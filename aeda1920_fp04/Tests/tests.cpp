@@ -137,7 +137,7 @@ TEST(test, e_OrdenaNome){
 }
 
 TEST(test, f_InfoClientes){
-   /* ParqueEstacionamento p1(10,20);
+    ParqueEstacionamento p1(10,20);
     p1.adicionaCliente("Joao Santos");
     p1.adicionaCliente("Pedro Morais");
     p1.adicionaCliente("Rui Silva");
@@ -160,5 +160,5 @@ TEST(test, f_InfoClientes){
         cout << "Este teste nunca falha. Verifique no monitor a informacao" << endl;
         cout << "Apanhou excecao. Posicao nao existente:" << e.getValor() << endl;
         EXPECT_EQ(6, e.getValor());
-    }*/
+    }
 }

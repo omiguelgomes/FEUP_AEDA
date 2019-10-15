@@ -321,6 +321,9 @@
 		<Unit filename="C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp04/Tests/insertionSort.h">
 			<Option target="aeda1920_fp04"/>
 		</Unit>
+		<Unit filename="C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp04/Tests/insertionSortName.h">
+			<Option target="aeda1920_fp04"/>
+		</Unit>
 		<Unit filename="C:/Users/migue/Desktop/FEUP/AEDA/aeda1920_fp04/Tests/parque.cpp">
 			<Option target="aeda1920_fp04"/>
 		</Unit>

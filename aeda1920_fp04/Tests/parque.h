@@ -14,6 +14,12 @@ public:
     string nome;
 };
 
+class PosicaoNaoExistente{
+public:
+    PosicaoNaoExistente(const int pos);
+    int getValor() const;
+    int pos;
+};
 class InfoCartao {
 public:
 	string nome;
